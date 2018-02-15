@@ -9,25 +9,26 @@
 <textdomain>control</textdomain>
 
 <texts>
-  <kvm_host_role>
+  <hpc_node>
     <!-- TRANSLATORS: a label for a system role -->
-    <label>KVM Virtualization Host</label>
-  </kvm_host_role>
-  <kvm_host_role_description>
-    <label>• Kernel-based hypervisor and tools
-• Dedicated /var/lib/libvirt partition
-• Disable firewall, kdump services</label>
-  </kvm_host_role_description>
+    <label>HPC node</label>
+  </hpc_node>
+  <hpc_node_description>
+    <label>• minimal setup
+• includes HPC enables libraries
+• Disable firewall, kdump services
+• no home directory</label>
+  </hpc_node_description>
 </texts>
 
     <update>
       <system_roles>
         <insert_system_roles config:type="list">
           <insert_system_role>
-            <!-- FATE#317481 -->
+            <!-- FATE#323494 -->
             <system_roles config:type="list">
               <system_role>
-                <id>kvm_host_role</id>
+                <id>hpc_node</id>
                 <order config:type="integer">2000</order>
                 <!-- the rest is overlaid over the feature sections and values. -->
 		<globals>
