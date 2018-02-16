@@ -1,5 +1,5 @@
 #
-# spec file for package system-role-kvm
+# spec file for package system-role-hpc
 #
 # Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
 #
@@ -33,7 +33,7 @@ BuildRequires:  libxml2-tools
 # RNG validation schema
 BuildRequires:  yast2-installation-control >= 4.0.0
 
-Url:            https://github.com/yast/system-role-kvm
+Url:            https://github.com/mslacken/system-role-hpc
 AutoReqProv:    off
 Version:        15.0.7
 Release:        0
@@ -47,7 +47,7 @@ Provides:       extension_for_product() = SLES
 Provides:       extension_for_product() = SLES_SAP
 
 %description
-Meta package for Server KVM role definition.
+Meta package for Server HPC role definition.
 It is not intended for installation.
 
 %prep
