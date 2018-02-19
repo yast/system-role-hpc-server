@@ -20,14 +20,14 @@
 #
 # IMPORTANT: Please do not change the control file or this spec file
 #   in build service directly, use
-#   https://github.com/yast/system-role-kvm repository
+#   https://github.com/yast/system-role-hpc repository
 #
 #   See https://github.com/yast/skelcd-control-server-role/blob/master/CONTRIBUTING.md
 #   for more details.
 #
 ######################################################################
 
-Name:           system-role-kvm
+Name:           system-role-hpc
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
@@ -42,7 +42,7 @@ License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
-Provides:       installer_module_extension() = system-role-kvm
+Provides:       installer_module_extension() = system-role-hpc
 Provides:       extension_for_product() = SLES
 Provides:       extension_for_product() = SLES_SAP
 
