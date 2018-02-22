@@ -37,14 +37,13 @@ Url:            https://github.com/mslacken/system-role-hpc
 AutoReqProv:    off
 Version:        15.0.7
 Release:        0
-Summary:        Server KVM role definition
+Summary:        Server HPC role definition
 License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
 Provides:       installer_module_extension() = system-role-hpc
 Provides:       extension_for_product() = SLES
-Provides:       extension_for_product() = SLES_SAP
 
 %description
 Meta package for Server HPC role definition.
