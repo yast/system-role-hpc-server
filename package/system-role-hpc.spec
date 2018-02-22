@@ -43,6 +43,8 @@ Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
 Provides:       installer_module_extension() = system-role-hpc
+#Should work with this, but does not
+#Provides:       extension_for_product() = SLE-HPC
 Provides:       extension_for_product() = SLES
 
 %description
