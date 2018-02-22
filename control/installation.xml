@@ -34,12 +34,15 @@
 		<globals>
 		  <enable_autologin config:type="boolean">false</enable_autologin>
 		  <enable_firewall config:type="boolean">false</enable_firewall>
+		  <enable_sshd config:type="boolean">true</enable_sshd>
+		  <enable_kdump config:type="boolean">false</enable_kdump>
+		  <enable_clone config:type="boolean">true</enable_clone>
 		  <firewall_enable_ssh config:type="boolean">false</firewall_enable_ssh>
 		  <displaymanager_shutdown>root</displaymanager_shutdown>
-		  <enable_sshd config:type="boolean">true</enable_sshd>
 		  <dhclient_set_hostname config:type="boolean">true</dhclient_set_hostname>
-		  <enable_kdump config:type="boolean">false</enable_kdump>
 		  <default_ntp_setup config:type="boolean">true</default_ntp_setup>
+		  <default_target>multi-user.target</default_target>
+		  <disable_os_prober config:type="boolean">true</disable_os_prober>
 		</globals>
                 <partitioning>
                   <!-- The whole list of volumes and the whole section for proposal settings
@@ -49,9 +52,10 @@
                        default control.xml -->
 
                   <proposal>
+		  <!--  remove all stuff sitting on the disk, we do not expect anything -->
                     <windows_delete_mode config:type="symbol">all</windows_delete_mode>
-                    <linux_delete_mode config:type="symbol">ondemand</linux_delete_mode>
-                    <other_delete_mode config:type="symbol">ondemand</other_delete_mode>
+                    <linux_delete_mode config:type="symbol">all</linux_delete_mode>
+                    <other_delete_mode config:type="symbol">all</other_delete_mode>
                   </proposal>
 
                   <volumes config:type="list">
@@ -60,7 +64,7 @@
                       <fs_type>xfs</fs_type>
                       <fs_types>xfs,ext3,ext4</fs_types>
                       <desired_size config:type="disksize">16 GiB</desired_size>
-                      <min_size config:type="disksize">1 GiB</min_size>
+                      <min_size config:type="disksize">4 GiB</min_size>
                       <max_size config:type="disksize">32 GiB</max_size>
                       <weight config:type="integer">20</weight>
 		    </volume>
@@ -101,7 +105,7 @@
                   </volumes>
                 </partitioning>
                 <software>
-                  <default_patterns>minimal hpc_node </default_patterns>
+                  <default_patterns>minimal hpc_node</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
                   <minimalistic_libzypp_config config:type="boolean">true</minimalistic_libzypp_config>
                   <display_support_status config:type="boolean">true</display_support_status>
