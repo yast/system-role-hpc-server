@@ -41,7 +41,7 @@
 		  <displaymanager_shutdown>root</displaymanager_shutdown>
 		  <dhclient_set_hostname config:type="boolean">true</dhclient_set_hostname>
 		  <default_ntp_setup config:type="boolean">true</default_ntp_setup>
-		  <default_target>multi-user.target</default_target>
+		  <default_target>multi-user</default_target>
 		  <disable_os_prober config:type="boolean">true</disable_os_prober>
 		  <root_password_as_first_user config:type="boolean">true</root_password_as_first_user> 
 		</globals>
@@ -106,7 +106,7 @@
                   </volumes>
                 </partitioning>
                 <software>
-                  <default_patterns>minimal hpc_node</default_patterns>
+                  <default_patterns>base ofed</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
                   <minimalistic_libzypp_config config:type="boolean">true</minimalistic_libzypp_config>
                   <display_support_status config:type="boolean">true</display_support_status>
