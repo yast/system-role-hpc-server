@@ -1,5 +1,5 @@
 #
-# spec file for package system-role-hpc-compute
+# spec file for package system-role-hpc-server
 #
 # Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
 #
@@ -20,20 +20,20 @@
 #
 # IMPORTANT: Please do not change the control file or this spec file
 #   in build service directly, use
-#   https://github.com/yast/system-role-hpc-compute repository
+#   https://github.com/yast/system-role-hpc-server repository
 #
 #   See https://github.com/yast/skelcd-control-server-role/blob/master/CONTRIBUTING.md
 #   for more details.
 #
 ######################################################################
 
-Name:           system-role-hpc-compute
+Name:           system-role-hpc-server
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
 BuildRequires:  yast2-installation-control >= 4.0.0
 
-Url:            https://github.com/mslacken/system-role-hpc
+Url:            https://github.com/mslacken/system-role-hpc-server
 AutoReqProv:    off
 Version:        15.0.7
 Release:        0
@@ -42,7 +42,7 @@ License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
-Provides:       installer_module_extension() = system-role-hpc-compute
+Provides:       installer_module_extension() = system-role-hpc-server
 #Should work with this, but does not
 Provides:       extension_for_product() = SLES_HPC
 #Provides:       extension_for_product() = SLES
