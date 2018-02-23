@@ -1,5 +1,5 @@
 #
-# spec file for package system-role-hpc
+# spec file for package system-role-hpc-compute
 #
 # Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
 #
@@ -20,14 +20,14 @@
 #
 # IMPORTANT: Please do not change the control file or this spec file
 #   in build service directly, use
-#   https://github.com/yast/system-role-hpc repository
+#   https://github.com/yast/system-role-hpc-compute repository
 #
 #   See https://github.com/yast/skelcd-control-server-role/blob/master/CONTRIBUTING.md
 #   for more details.
 #
 ######################################################################
 
-Name:           system-role-hpc
+Name:           system-role-hpc-compute
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
@@ -42,13 +42,13 @@ License:        MIT
 Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
-Provides:       installer_module_extension() = system-role-hpc
+Provides:       installer_module_extension() = system-role-hpc-compute
 #Should work with this, but does not
-#Provides:       extension_for_product() = SLE-HPC
-Provides:       extension_for_product() = SLES
+Provides:       extension_for_product() = SLES_HPC
+#Provides:       extension_for_product() = SLES
 
 %description
-Meta package for Server HPC role definition.
+Meta package for Server HPC role definition. This is the compute node
 It is not intended for installation.
 
 %prep
