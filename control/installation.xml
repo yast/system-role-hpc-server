@@ -9,16 +9,16 @@
 <textdomain>control</textdomain>
 
 <texts>
-  <hpc_node>
+  <hpc_server>
     <!-- TRANSLATORS: a label for a system role -->
-    <label>HPC node</label>
-  </hpc_node>
-  <hpc_node_description>
-    <label>• minimal setup
-• includes HPC enables libraries
-• Disable firewall, kdump services
-• no home directory</label>
-  </hpc_node_description>
+    <label>HPC server</label>
+  </hpc_server>
+  <hpc_server_description>
+    <label>• include HPC enabled libraries
+• disable firewall, kdump services
+• add ldap and dns server
+</label>
+  </hpc_server_description>
 </texts>
 
     <update>
@@ -28,7 +28,7 @@
             <!-- FATE#323494 -->
             <system_roles config:type="list">
               <system_role>
-                <id>hpc_node</id>
+                <id>hpc_server</id>
                 <order config:type="integer">2000</order>
                 <!-- the rest is overlaid over the feature sections and values. -->
 		<globals>
@@ -69,9 +69,9 @@
                       <max_size config:type="disksize">32 GiB</max_size>
                       <weight config:type="integer">20</weight>
 		    </volume>
-                    <!-- The /var/tmp partition -->
+                    <!-- The home partition -->
                     <volume>
-                      <mount_point>/var/tmp</mount_point>
+                      <mount_point>/home</mount_point>
                       <fs_type>xfs</fs_type>
                       <fs_types>xfs,ext3,ext4</fs_types>
 
@@ -107,7 +107,7 @@
                 </partitioning>
                 <software>
 		  <!-- we do need most likely more repos with "base ofed"-->
-                  <default_patterns>base compute-node hpc-libraries</default_patterns>
+                  <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server directory_server hpc_development_node yast2_basis devel_basis</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
                   <minimalistic_libzypp_config config:type="boolean">true</minimalistic_libzypp_config>
                   <display_support_status config:type="boolean">true</display_support_status>
@@ -115,6 +115,9 @@
                   instead of omitting the key entirely -->
                   <optional_default_patterns><![CDATA[]]></optional_default_patterns>
                 </software>
+		<!--
+                <additional_dialogs>file_server_setup</additional_dialogs>
+		-->
               </system_role>
             </system_roles>
           </insert_system_role>

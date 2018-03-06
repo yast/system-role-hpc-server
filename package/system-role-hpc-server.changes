@@ -1,57 +1,16 @@
 -------------------------------------------------------------------
-Wed Jan 10 16:20:11 UTC 2018 - rbrown@suse.com
- 
-- adjust subvolume list to have NoCOW /var instead of many
-subvolumes (boo#1075369)
-- 15.0.7
+Tue Mar  6 10:09:03 UTC 2018 - cgoll@suse.com
+
+- checked patterns more extensively
 
 -------------------------------------------------------------------
-Tue Dec 19 08:54:31 UTC 2017 - gsouza@suse.com
+Tue Feb 27 09:18:16 UTC 2018 - cgoll@suse.com
 
-- Added SLES4SAP extension_for_product entry (bsc#1072592)
-- 15.0.6
-
--------------------------------------------------------------------
-Mon Dec  4 09:57:43 UTC 2017 - gsouza@suse.com
-
-- Filter SLES roles so that they are not shown with SLED
-  (fate#324198)
-- 15.0.5
-
-- -----------------------------------------------------------------
-Thu Nov 30 10:00:25 UTC 2017 - aginies@suse.com
-
-- don't apply change globaly but only for the KVM system role
-- 15.0.4
+- added check section to build process 
 
 -------------------------------------------------------------------
-Wed Nov  8 15:49:41 UTC 2017 - aginies@suse.com
+Fri Feb 23 13:47:37 UTC 2018 - cgoll@suse.com
 
-- Kernel-based hypervisor and tools
-- kvm server and tools patterns selected
-- Disable kdump and firewall
-- ntp default setup
-- 15.0.3
-- FATE#324207: Improve Virtualization System role (XEN/KVM)
+- Initial commit: System role for an HPC Server. (FATE#323494).
 
 -------------------------------------------------------------------
-Wed Nov  8 13:07:17 UTC 2017 - ancor@suse.com
-
-- Propose a separate /var/lib/libvirt partition or logical volume
-  using the new format in the <partitioning> format of the control
-  file (part of fate#324207).
-- 15.0.2
-
--------------------------------------------------------------------
-Wed Oct  4 22:35:58 UTC 2017 - sflees@suse.de
-
-- Drop Minimal from software list, it doesn't exist anymore and
-  base pulls in its replacement via dependencies (bsc#1061989)
-- 15.0.1
-
--------------------------------------------------------------------
-Fri Sep 29 16:12:25 UTC 2017 - knut.anderssen@suse.com
-
-- Initial package (needed for having roles in their own package for
-  different modules) bsc#1049297.
-- 15.0.0
