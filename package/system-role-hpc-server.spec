@@ -1,7 +1,7 @@
 #
 # spec file for package system-role-hpc-server
 #
-# Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
+# Copyright (c) 2018 SUSE LINUX GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -33,7 +33,7 @@ BuildRequires:  libxml2-tools
 # RNG validation schema
 BuildRequires:  yast2-installation-control >= 4.0.0
 
-Url:            https://github.com/mslacken/system-role-hpc-server
+Url:            https://github.com/yast/system-role-hpc-server           
 AutoReqProv:    off
 Version:        15.0.7
 Release:        0
@@ -43,9 +43,7 @@ Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
 Provides:       installer_module_extension() = system-role-hpc-server
-#Should work with this, but does not
 Provides:       extension_for_product() = SLES_HPC
-#Provides:       extension_for_product() = SLES
 
 %description
 Meta package for Server HPC role definition. This is the compute node

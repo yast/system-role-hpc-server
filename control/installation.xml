@@ -107,7 +107,7 @@
                 </partitioning>
                 <software>
 		  <!-- we do need most likely more repos with "base ofed"-->
-                  <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server directory_server hpc_development_node yast2_basis devel_basis</default_patterns>
+                  <default_patterns>minimal_base hpc-compute_node hpc-libraries ofed file_server directory_server hpc-development_node yast2_basis devel_basis</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
                   <minimalistic_libzypp_config config:type="boolean">true</minimalistic_libzypp_config>
                   <display_support_status config:type="boolean">true</display_support_status>
