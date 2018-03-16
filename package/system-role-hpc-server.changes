@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Fri Mar 16 07:22:39 UTC 2018 - eich@suse.com
+
+- Fixing pattern names - replacing '-' by '_' (bsc#1085254).
+
+-------------------------------------------------------------------
 Wed Mar 14 13:12:40 UTC 2018 - cgoll@suse.com
 
 - updated to new patterns (bsc#1085254)
