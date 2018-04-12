@@ -109,7 +109,7 @@
 		  <!-- we do need most likely more repos with "base ofed"-->
                   <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server directory_server hpc_development_node yast2_basis devel_basis</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
-		  <!-- minimalistc install keeps out recommended packages what will break
+		  <!-- minimalistic install keeps out recommended packages what will break
 		       hpc-patterns (bsc#1088275) -->
                   <minimalistic_libzypp_config config:type="boolean">false</minimalistic_libzypp_config>
                   <display_support_status config:type="boolean">true</display_support_status>
