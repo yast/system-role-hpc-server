@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Thu Apr 12 14:40:26 UTC 2018 - cgoll@suse.com
+
+- Setting minimalistic_libzypp_config to false (bsc#1088275)
+
+-------------------------------------------------------------------
 Fri Mar 16 07:22:39 UTC 2018 - eich@suse.com
 
 - Fixing pattern names - replacing '-' by '_' (bsc#1085254).
