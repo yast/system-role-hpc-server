@@ -11,12 +11,11 @@
 <texts>
   <hpc_server>
     <!-- TRANSLATORS: a label for a system role -->
-    <label>HPC server</label>
+    <label>HPC Managment Node</label>
   </hpc_server>
   <hpc_server_description>
     <label>• include HPC enabled libraries
-• disable firewall, kdump services
-• add ldap and dns server
+• disabled firewall, kdump services
 </label>
   </hpc_server_description>
 </texts>
@@ -29,7 +28,7 @@
             <system_roles config:type="list">
               <system_role>
                 <id>hpc_server</id>
-                <order config:type="integer">2000</order>
+                <order config:type="integer">1000</order>
                 <!-- the rest is overlaid over the feature sections and values. -->
 		<globals>
 		  <enable_autologin config:type="boolean">false</enable_autologin>
@@ -107,7 +106,7 @@
                 </partitioning>
                 <software>
 		  <!-- we do need most likely more repos with "base ofed"-->
-                  <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server directory_server hpc_development_node yast2_basis devel_basis</default_patterns>
+                  <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
 		  <!-- minimalistic install keeps out recommended packages what will break
 		       hpc-patterns (bsc#1088275) -->
