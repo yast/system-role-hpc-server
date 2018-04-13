@@ -11,7 +11,7 @@
 <texts>
   <hpc_server>
     <!-- TRANSLATORS: a label for a system role -->
-    <label>HPC Managment Node</label>
+    <label>HPC Managment Server (Head Node)</label>
   </hpc_server>
   <hpc_server_description>
     <label>• Uses xfs as the default root filesystem
