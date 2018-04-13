@@ -14,8 +14,11 @@
     <label>HPC Managment Node</label>
   </hpc_server>
   <hpc_server_description>
-    <label>• include HPC enabled libraries
-• disabled firewall, kdump services
+    <label>• Uses xfs as the default root filesystem
+• Includes HPC-enabled libraries
+• Disables firewall and kdump services
+• Installs controller for the Slurm Workload Manager 
+• Mounts a large scratch partition to /var/tmp
 </label>
   </hpc_server_description>
 </texts>
@@ -106,7 +109,7 @@
                 </partitioning>
                 <software>
 		  <!-- we do need most likely more repos with "base ofed"-->
-                  <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis</default_patterns>
+                  <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis workload_server</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
 		  <!-- minimalistic install keeps out recommended packages what will break
 		       hpc-patterns (bsc#1088275) -->
