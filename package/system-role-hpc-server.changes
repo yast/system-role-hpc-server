@@ -2,6 +2,7 @@
 Thu Apr 12 14:40:26 UTC 2018 - cgoll@suse.com
 
 - Setting minimalistic_libzypp_config to false (bsc#1088275)
+- Synced descriptions with FATE#323494 (bsc#1089392)
 
 -------------------------------------------------------------------
 Fri Mar 16 07:22:39 UTC 2018 - eich@suse.com
