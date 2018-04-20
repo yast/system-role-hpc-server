@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Fri Apr 20 08:57:52 UTC 2018 - cgoll@suse.com
+
+- changed required pattern from minimal_base to base bsc#1090282 
+
+-------------------------------------------------------------------
 Thu Apr 12 14:40:26 UTC 2018 - cgoll@suse.com
 
 - Setting minimalistic_libzypp_config to false (bsc#1088275)

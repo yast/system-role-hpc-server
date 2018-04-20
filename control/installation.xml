@@ -108,8 +108,9 @@
                   </volumes>
                 </partitioning>
                 <software>
-		  <!-- we do need most likely more repos with "base ofed"-->
-                  <default_patterns>minimal_base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis workload_server</default_patterns>
+		  <!-- using base as minimal_base would nearly provide as much packages as
+		       base bsc#1090282 -->
+                  <default_patterns>base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis workload_server</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
 		  <!-- minimalistic install keeps out recommended packages what will break
 		       hpc-patterns (bsc#1088275) -->
