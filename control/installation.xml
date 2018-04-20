@@ -65,15 +65,69 @@
                     <volume>
                       <mount_point>/</mount_point>
                       <fs_type>xfs</fs_type>
-                      <fs_types>xfs,ext3,ext4</fs_types>
+                      <fs_types>xfs,ext3,ext4,btrfs</fs_types>
                       <desired_size config:type="disksize">16 GiB</desired_size>
                       <min_size config:type="disksize">4 GiB</min_size>
                       <max_size config:type="disksize">32 GiB</max_size>
                       <weight config:type="integer">20</weight>
+			<snapshots config:type="boolean">true</snapshots>
+			<snapshots_configurable config:type="boolean">true</snapshots_configurable>
+			<snapshots_percentage config:type="integer">300</snapshots_percentage>
+
+			<!-- the default subvolume "@" was requested by product management -->
+			<btrfs_default_subvolume>@</btrfs_default_subvolume>
+			<btrfs_read_only config:type="boolean">false</btrfs_read_only>
+
+			<!-- subvolumes to be created for a Btrfs root file system -->
+			<!-- copy_on_write is true by default -->
+			<subvolumes config:type="list">
+			    <subvolume>
+				<path>home</path>
+			    </subvolume>
+			    <subvolume>
+				<path>opt</path>
+			    </subvolume>
+			    <subvolume>
+				<path>root</path>
+			    </subvolume>
+			    <subvolume>
+				<path>srv</path>
+			    </subvolume>
+			    <subvolume>
+				<path>tmp</path>
+			    </subvolume>
+			    <subvolume>
+				<path>usr/local</path>
+			    </subvolume>
+			    <!-- unified var subvolume - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
+			    <subvolume>
+				<path>var</path>
+				<copy_on_write config:type="boolean">false</copy_on_write>
+			    </subvolume>
+
+			    <!-- architecture specific subvolumes -->
+
+			    <subvolume>
+				<path>boot/grub2/i386-pc</path>
+				<archs>i386,x86_64</archs>
+			    </subvolume>
+			    <subvolume>
+				<path>boot/grub2/x86_64-efi</path>
+				<archs>x86_64</archs>
+			    </subvolume>
+			    <subvolume>
+				<path>boot/grub2/powerpc-ieee1275</path>
+				<archs>ppc,!board_powernv</archs>
+			    </subvolume>
+			    <subvolume>
+				<path>boot/grub2/s390x-emu</path>
+				<archs>s390</archs>
+			    </subvolume>
+			</subvolumes>
 		    </volume>
-                    <!-- The home partition -->
+                    <!-- The /var/tmp partition -->
                     <volume>
-                      <mount_point>/home</mount_point>
+                      <mount_point>/var/tmp</mount_point>
                       <fs_type>xfs</fs_type>
                       <fs_types>xfs,ext3,ext4</fs_types>
 
@@ -110,7 +164,7 @@
                 <software>
 		  <!-- using base as minimal_base would nearly provide as much packages as
 		       base bsc#1090282 -->
-                  <default_patterns>base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis workload_server</default_patterns>
+                  <default_patterns>base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis hpc_workload_server</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
 		  <!-- minimalistic install keeps out recommended packages what will break
 		       hpc-patterns (bsc#1088275) -->
