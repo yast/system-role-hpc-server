@@ -139,7 +139,11 @@
                       <max_size config:type="disksize">unlimited</max_size>
                       <weight config:type="integer">70</weight>
                       <!-- If this volume is disabled, we want "/" to become greedy (unlimited
+<<<<<<< HEAD
                            max), because big simulation data can go here -->
+=======
+                           max), because big simultion will go here -->
+>>>>>>> 0c31579f1c9744f8fe8d199f66412bcfd210a0c3
                       <fallback_for_max_size>/</fallback_for_max_size>
                     </volume>
 
