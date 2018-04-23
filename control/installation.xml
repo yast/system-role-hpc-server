@@ -33,29 +33,29 @@
                 <id>hpc_server</id>
                 <order config:type="integer">1000</order>
                 <!-- the rest is overlaid over the feature sections and values. -->
-		<globals>
-		  <enable_autologin config:type="boolean">false</enable_autologin>
-		  <enable_firewall config:type="boolean">false</enable_firewall>
-		  <enable_sshd config:type="boolean">true</enable_sshd>
-		  <enable_kdump config:type="boolean">false</enable_kdump>
-		  <enable_clone config:type="boolean">true</enable_clone>
-		  <firewall_enable_ssh config:type="boolean">false</firewall_enable_ssh>
-		  <displaymanager_shutdown>root</displaymanager_shutdown>
-		  <dhclient_set_hostname config:type="boolean">true</dhclient_set_hostname>
-		  <default_ntp_setup config:type="boolean">true</default_ntp_setup>
-		  <default_target>multi-user</default_target>
-		  <disable_os_prober config:type="boolean">true</disable_os_prober>
-		  <root_password_as_first_user config:type="boolean">true</root_password_as_first_user> 
-		</globals>
+                <globals>
+                  <enable_autologin config:type="boolean">false</enable_autologin>
+                  <enable_firewall config:type="boolean">false</enable_firewall>
+                  <enable_sshd config:type="boolean">true</enable_sshd>
+                  <enable_kdump config:type="boolean">false</enable_kdump>
+                  <enable_clone config:type="boolean">true</enable_clone>
+                  <firewall_enable_ssh config:type="boolean">false</firewall_enable_ssh>
+                  <displaymanager_shutdown>root</displaymanager_shutdown>
+                  <dhclient_set_hostname config:type="boolean">true</dhclient_set_hostname>
+                  <default_ntp_setup config:type="boolean">true</default_ntp_setup>
+                  <default_target>multi-user</default_target>
+                  <disable_os_prober config:type="boolean">true</disable_os_prober>
+                  <root_password_as_first_user config:type="boolean">true</root_password_as_first_user> 
+                </globals>
                 <partitioning>
-                  <!-- The whole list of volumes and the whole section for proposal settings
-                       need to be defined here because the SLES control file still uses the
-                       legacy pre storage-ng format, not based in a list of volumes. Maybe
-                       this section could be simplified once SLES adopts the new format in the
-                       default control.xml -->
+                <!-- The whole list of volumes and the whole section for proposal settings
+                     need to be defined here because the SLES control file still uses the
+                     legacy pre storage-ng format, not based in a list of volumes. Maybe
+                     this section could be simplified once SLES adopts the new format in the
+                     default control.xml -->
 
                   <proposal>
-		  <!--  remove all stuff sitting on the disk, we do not expect anything -->
+                  <!--  remove all stuff sitting on the disk, we do not expect anything -->
                     <windows_delete_mode config:type="symbol">all</windows_delete_mode>
                     <linux_delete_mode config:type="symbol">all</linux_delete_mode>
                     <other_delete_mode config:type="symbol">all</other_delete_mode>
@@ -70,61 +70,59 @@
                       <min_size config:type="disksize">4 GiB</min_size>
                       <max_size config:type="disksize">32 GiB</max_size>
                       <weight config:type="integer">20</weight>
-			<snapshots config:type="boolean">true</snapshots>
-			<snapshots_configurable config:type="boolean">true</snapshots_configurable>
-			<snapshots_percentage config:type="integer">300</snapshots_percentage>
+                      <snapshots config:type="boolean">true</snapshots>
+                      <snapshots_configurable config:type="boolean">true</snapshots_configurable>
+                      <snapshots_percentage config:type="integer">300</snapshots_percentage>
 
-			<!-- the default subvolume "@" was requested by product management -->
-			<btrfs_default_subvolume>@</btrfs_default_subvolume>
-			<btrfs_read_only config:type="boolean">false</btrfs_read_only>
+                      <!-- the default subvolume "@" was requested by product management -->
+                      <btrfs_default_subvolume>@</btrfs_default_subvolume>
+                      <btrfs_read_only config:type="boolean">false</btrfs_read_only>
 
-			<!-- subvolumes to be created for a Btrfs root file system -->
-			<!-- copy_on_write is true by default -->
-			<subvolumes config:type="list">
-			    <subvolume>
-				<path>home</path>
-			    </subvolume>
-			    <subvolume>
-				<path>opt</path>
-			    </subvolume>
-			    <subvolume>
-				<path>root</path>
-			    </subvolume>
-			    <subvolume>
-				<path>srv</path>
-			    </subvolume>
-			    <subvolume>
-				<path>tmp</path>
-			    </subvolume>
-			    <subvolume>
-				<path>usr/local</path>
-			    </subvolume>
-			    <!-- unified var subvolume - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
-			    <subvolume>
-				<path>var</path>
-				<copy_on_write config:type="boolean">false</copy_on_write>
-			    </subvolume>
-
-			    <!-- architecture specific subvolumes -->
-
-			    <subvolume>
-				<path>boot/grub2/i386-pc</path>
-				<archs>i386,x86_64</archs>
-			    </subvolume>
-			    <subvolume>
-				<path>boot/grub2/x86_64-efi</path>
-				<archs>x86_64</archs>
-			    </subvolume>
-			    <subvolume>
-				<path>boot/grub2/powerpc-ieee1275</path>
-				<archs>ppc,!board_powernv</archs>
-			    </subvolume>
-			    <subvolume>
-				<path>boot/grub2/s390x-emu</path>
-				<archs>s390</archs>
-			    </subvolume>
-			</subvolumes>
-		    </volume>
+                      <!-- subvolumes to be created for a Btrfs root file system -->
+                      <!-- copy_on_write is true by default -->
+                      <subvolumes config:type="list">
+                        <subvolume>
+                          <path>home</path>
+                        </subvolume>
+                        <subvolume>
+                          <path>opt</path>
+                        </subvolume>
+                        <subvolume>
+                          <path>root</path>
+                        </subvolume>
+                        <subvolume>
+                          <path>srv</path>
+                        </subvolume>
+                        <subvolume>
+                          <path>tmp</path>
+                        </subvolume>
+                        <subvolume>
+                          <path>usr/local</path>
+                        </subvolume>
+                        <!-- unified var subvolume - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
+                        <subvolume>
+                          <path>var</path>
+                          <copy_on_write config:type="boolean">false</copy_on_write>
+                        </subvolume>
+                        <!-- architecture specific subvolumes -->
+                        <subvolume>
+                          <path>boot/grub2/i386-pc</path>
+                          <archs>i386,x86_64</archs>
+                        </subvolume>
+                        <subvolume>
+                          <path>boot/grub2/x86_64-efi</path>
+                          <archs>x86_64</archs>
+                        </subvolume>
+                        <subvolume>
+                          <path>boot/grub2/powerpc-ieee1275</path>
+                          <archs>ppc,!board_powernv</archs>
+                        </subvolume>
+                        <subvolume>
+                          <path>boot/grub2/s390x-emu</path>
+                          <archs>s390</archs>
+                        </subvolume>
+                      </subvolumes>
+                    </volume>
                     <!-- The /var/tmp partition -->
                     <volume>
                       <mount_point>/var/tmp</mount_point>
@@ -141,7 +139,7 @@
                       <max_size config:type="disksize">unlimited</max_size>
                       <weight config:type="integer">70</weight>
                       <!-- If this volume is disabled, we want "/" to become greedy (unlimited
-                           max), since it will contain /var/lib/libvirt -->
+                           max), because big simultion will go here -->
                       <fallback_for_max_size>/</fallback_for_max_size>
                     </volume>
 
@@ -153,7 +151,6 @@
                       <proposed_configurable config:type="boolean">true</proposed_configurable>
                       <!-- Disable it in second place if we don't fit in the disk -->
                       <disable_order config:type="integer">2</disable_order>
-
                       <desired_size config:type="disksize">1 GiB</desired_size>
                       <min_size config:type="disksize">512 MiB</min_size>
                       <max_size config:type="disksize">2 GiB</max_size>
@@ -162,21 +159,21 @@
                   </volumes>
                 </partitioning>
                 <software>
-		  <!-- using base as minimal_base would nearly provide as much packages as
-		       base bsc#1090282 -->
+                  <!-- using base instead of minimal_base, because minminal_base would nearly 
+                       provide as much packages as base (bsc#1090282) -->
                   <default_patterns>base hpc_compute_node hpc_libraries ofed file_server hpc_development_node yast2_basis devel_basis hpc_workload_server</default_patterns>
                   <clone_install_recommended_default config:type="boolean">true</clone_install_recommended_default>
-		  <!-- minimalistic install keeps out recommended packages what will break
-		       hpc-patterns (bsc#1088275) -->
+                  <!-- minimalistic install keeps out recommended packages what will break
+                       hpc-patterns (bsc#1088275) -->
                   <minimalistic_libzypp_config config:type="boolean">false</minimalistic_libzypp_config>
                   <display_support_status config:type="boolean">true</display_support_status>
                   <!-- the cdata trick produces an empty string in the data
                   instead of omitting the key entirely -->
                   <optional_default_patterns><![CDATA[]]></optional_default_patterns>
                 </software>
-		<!--
-                <additional_dialogs>file_server_setup</additional_dialogs>
-		-->
+                <!--
+                            <additional_dialogs>file_server_setup</additional_dialogs>
+                -->
               </system_role>
             </system_roles>
           </insert_system_role>
