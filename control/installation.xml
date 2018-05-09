@@ -77,6 +77,8 @@
                       <!-- the default subvolume "@" was requested by product management -->
                       <btrfs_default_subvolume>@</btrfs_default_subvolume>
                       <btrfs_read_only config:type="boolean">false</btrfs_read_only>
+                      <!-- Disable snaphots if space is small -->
+                      <disable_order config:type="integer">3</disable_order>
 
                       <!-- subvolumes to be created for a Btrfs root file system -->
                       <!-- copy_on_write is true by default -->

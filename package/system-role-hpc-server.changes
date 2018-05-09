@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed May  9 11:55:30 UTC 2018 - cgoll@suse.com
+
+- added option disable_order to root-fs in order to fit on small
+  disks (bsc#1091123)
+
+-------------------------------------------------------------------
 Fri Apr 20 08:57:52 UTC 2018 - cgoll@suse.com
 
 - changed required pattern from minimal_base to base bsc#1090282 
