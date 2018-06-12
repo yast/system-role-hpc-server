@@ -43,7 +43,7 @@ Group:          Metapackages
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source:         %{name}-%{version}.tar.bz2
 Provides:       installer_module_extension() = system-role-hpc-server
-Provides:       extension_for_product() = SLES_HPC
+Provides:       extension_for_product() = SLE_HPC
 
 %description
 Meta package for Server HPC role definition. This is the compute node
