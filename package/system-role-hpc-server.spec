@@ -35,7 +35,7 @@ BuildRequires:  yast2-installation-control >= 4.0.0
 
 Url:            https://github.com/yast/system-role-hpc-server
 AutoReqProv:    off
-Version:        15.0.11
+Version:        15.0.12
 Release:        0
 Summary:        Server HPC role definition
 License:        MIT
