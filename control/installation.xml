@@ -17,8 +17,7 @@
     <label>• Uses xfs as the default root filesystem
 • Includes HPC-enabled libraries
 • Disables firewall and kdump services
-• Installs controller for the Slurm Workload Manager 
-• Mounts a large scratch partition to /var/tmp
+• Installs controller for the Slurm Workload Manager
 </label>
   </hpc_server_description>
 </texts>
