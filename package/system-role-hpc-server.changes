@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Nov  7 09:58:07 UTC 2018 - jreidinger@suse.com
+
+- use FHS compliant path (bsc#1108176)
+- 15.1.0
+
+-------------------------------------------------------------------
 Wed Jun 13 09:41:12 UTC 2018 - cgoll@suse.com
 
 - Add missing aarch64 grub2 efi subvolume (bsc#1097235)
