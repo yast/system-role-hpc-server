@@ -36,7 +36,7 @@ BuildRequires:  yast2-installation-control >= 4.0.0
 
 Url:            https://github.com/yast/system-role-hpc-server
 AutoReqProv:    off
-Version:        15.1.1
+Version:        15.1.2
 Release:        0
 Summary:        Server HPC role definition
 License:        MIT
@@ -63,7 +63,7 @@ make -C control check
 %install
 
 mkdir -p $RPM_BUILD_ROOT
-#
+
 # Add control file
 #
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}/system-roles
