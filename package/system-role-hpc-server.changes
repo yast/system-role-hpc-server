@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Fri Feb 28 11:08:36 UTC 2020 - Christian Goll <cgoll@suse.com>
 
-- changed default fs to btrfs 
+- changed default fs to btrfs (bsc#1165353)
 - 15.1.2
 
 -------------------------------------------------------------------
