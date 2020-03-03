@@ -64,7 +64,7 @@
                   <volumes config:type="list">
                     <volume>
                       <mount_point>/</mount_point>
-                      <fs_type>xfs</fs_type>
+                      <fs_type>btrfs</fs_type>
                       <fs_types>xfs,ext3,ext4,btrfs</fs_types>
                       <desired_size config:type="disksize">16 GiB</desired_size>
                       <min_size config:type="disksize">4 GiB</min_size>
