@@ -14,7 +14,7 @@
     <label>HPC Managment Server (Head Node)</label>
   </hpc_server>
   <hpc_server_description>
-    <label>• Uses xfs as the default root filesystem
+    <label>• Uses btrfs as the default root filesystem
 • Includes HPC-enabled libraries
 • Disables firewall and kdump services
 • Installs controller for the Slurm Workload Manager 
