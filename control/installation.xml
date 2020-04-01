@@ -45,7 +45,6 @@
                   <default_ntp_setup config:type="boolean">true</default_ntp_setup>
                   <default_target>multi-user</default_target>
                   <disable_os_prober config:type="boolean">true</disable_os_prober>
-                  <root_password_as_first_user config:type="boolean">true</root_password_as_first_user> 
                 </globals>
                 <partitioning>
                 <!-- The whole list of volumes and the whole section for proposal settings

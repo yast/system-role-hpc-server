@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Apr  1 14:44:49 UTC 2020 - Christian Goll <cgoll@suse.com>
+
+- aligned to standard root password behavior (bsc#1168351)
+- 15.1.3
+
+-------------------------------------------------------------------
 Fri Feb 28 11:08:36 UTC 2020 - Christian Goll <cgoll@suse.com>
 
 - changed default fs to btrfs (bsc#1165353)
