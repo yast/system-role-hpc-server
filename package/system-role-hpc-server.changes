@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Wed Apr  1 14:44:49 UTC 2020 - Christian Goll <cgoll@suse.com>
 
-- aligned to standard root password behavior (bsc#1168351)
+- aligned to standard root password behavior (bsc#1168351, bsc#1168351)
 - 15.2.0
 
 -------------------------------------------------------------------
